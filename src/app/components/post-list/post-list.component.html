@@ -1,0 +1,29 @@
+<ul>
+  <li *ngFor="let p of dataService.posts | async; let i = index">
+    <div class="card" (click)="selectPost(i)">
+      <div class="card-image">
+        <figure class="image">
+          <img [src]="p.Image" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <div class="post-data">
+            <div class="like-button">
+              <i *ngIf="p.liked" (click)="unLikePost(p)" class="fa-solid fa-heart"></i>
+              <i *ngIf="!p.liked" (click)="likePost(p)" class="fa-regular fa-heart"></i>
+            </div>
+            <div class="meta-data">
+              <div class="likes">
+                {{p.likes}} likes
+              </div>
+              <div class="time-stamp">
+                {{p.timestamp | date:'short'}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

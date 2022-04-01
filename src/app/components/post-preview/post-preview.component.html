@@ -1,0 +1,32 @@
+<div *ngIf="dataService.selectedPost as post">
+  <div class="card" *ngIf="post.Image">
+    <header class="card-header">
+      <p class="card-header-title">
+        Preview
+      </p>
+    </header>
+    <div class="card-image">
+      <figure class="image">
+        <img [src]="post.Image" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        <div class="post-data">
+          <div class="like-button">
+            <i *ngIf="post.liked" (click)="dataService.unLikePost(post)" class="fa-solid fa-heart"></i>
+          <i *ngIf="!post.liked" (click)="dataService.likePost(post)" class="fa-regular fa-heart"></i>
+          </div>
+          <div class="meta-data">
+            <div class="likes">
+              {{post.likes}} likes
+            </div>
+            <div class="time-stamp">
+              {{post.timestamp | date:'short'}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

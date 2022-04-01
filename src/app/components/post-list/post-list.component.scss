@@ -1,0 +1,28 @@
+li {
+  margin: 10px;
+}
+
+.card {
+  width: 300px;
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 8px;
+}
+
+.post-data {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  i {
+    font-size: 26px;
+  }
+}
+
+.meta-data {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
